@@ -1,0 +1,13 @@
+scientific-illustrator v2 quick start
+
+1) Install with scripts\install.ps1 and reload Skills.
+2) Open Adobe Illustrator and the target document yourself.
+3) Run scripts\doctor.ps1 -RequireIllustratorOpen.
+4) Create a job: python scripts\prepare_job.py .\work
+5) Let the model author <job>\master.svg and text-manifest.json.
+6) QA: python scripts\svg_qa.py <job>\master.svg --strict --playback
+7) Cache once: python scripts\prepare_geometry_cache.py <job>\master.svg --cache-dir <job>\cache --batch-size 30
+8) Cache QA: python scripts\cache_qa.py <job>\cache --master-svg <job>\master.svg --strict
+9) Play native objects: powershell -ExecutionPolicy Bypass -File scripts\run_playback.ps1 -CacheDir <job>\cache -LayerName SI_redraw -FitMode contain
+10) If interrupted, rerun step 9 unchanged. If Master SVG changed, rebuild cache with --replace and rerun step 9 with -ResetGeneratedLayer.
+11) Export previews and finalize to NEW AI/PDF output paths.
