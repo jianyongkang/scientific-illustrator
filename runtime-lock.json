@@ -1,0 +1,15 @@
+{
+  "schema": 2,
+  "skill": "scientific-illustrator",
+  "version": "2.0.0",
+  "platform": "Windows 10/11 x64",
+  "powershell": ">=5.1",
+  "python": ">=3.11,<3.15",
+  "illustrator": "Adobe Illustrator 2026 (30.x) preferred",
+  "network_required": false,
+  "python_dependencies": "stdlib-only",
+  "default_batch_size": 30,
+  "ordinary_batch_range": [20, 50],
+  "playback": "persistent-active-illustrator-com-session",
+  "cache_schema": 2
+}
