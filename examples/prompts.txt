@@ -1,0 +1,5 @@
+使用 $scientific-illustrator，根据我上传的论文图在我已经打开的 Illustrator 文档中重画。你自己理解图中结构并构造可编辑 Master SVG，不使用第三方矢量化 API。把 Master SVG 只解析一次成几何缓存，再通过同一个 Illustrator 会话按 paint order 分批创建原生 PathItem 和 live text；中断时从未完成批次继续。导出预览对照修正，最后输出新的 AI 副本和 PDF，不覆盖原文件。
+
+使用 $scientific-illustrator，把这张机制图按当前画板大小重建。箭头头部要画成独立 path/polygon，不用 SVG marker；文字保持 live text。使用 FitMode=artboard 原生播放。
+
+使用 $scientific-illustrator，继续刚才中断的绘图。Master SVG 没有改动，不要重置 SI_redraw，只检查 playback-state.json 并从第一个未完成 batch 续画。
