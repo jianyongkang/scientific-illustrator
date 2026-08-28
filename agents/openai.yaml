@@ -1,0 +1,8 @@
+interface:
+  display_name: Scientific Illustrator
+  short_description: Native scientific vector redraw with resumable Illustrator playback
+  default_prompt: Use $scientific-illustrator to semantically reconstruct this scientific figure as a playback-safe Master SVG, parse it once into an immutable geometry cache, draw native editable paths and live text through one persistent already-open Illustrator session, resume incomplete batches safely, inspect a preview, and export a new AI working copy plus PDF without third-party vectorization APIs or overwriting my original.
+policy:
+  products:
+    - codex
+  allow_implicit_invocation: true
